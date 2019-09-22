@@ -2,6 +2,21 @@
 
 > <%= description %>
 
+## Required VS Code extensions
+
+- [Vetur](vscode:extension/octref.vetur)
+- [ESLint](vscode:extension/dbaeumer.vscode-eslint)
+
+Recommended:
+
+- [Tailwind CSS IntelliSense](vscode:extension/bradlc.vscode-tailwindcss)
+
+- [DotENV](vscode:extension/mikestead.dotenv)
+
+- [Vue VSCode Snippets](vscode:extension/sdras.vue-vscode-snippets)
+
+- [TODO Highlight](vscode:extension/wayou.vscode-todo-highlight)
+
 ## Build Setup
 
 ``` bash

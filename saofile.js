@@ -22,8 +22,7 @@ module.exports = {
       name: 'author',
       type: 'string',
       message: 'Author name',
-      default: '{gitUser.name}',
-      store: true
+      default: 'atoms (https://atoms.studio)'
     },
     {
       name: 'pm',
@@ -33,7 +32,7 @@ module.exports = {
         { name: 'Npm', value: 'npm' }
       ],
       type: 'list',
-      default: 'yarn'
+      default: 'npm'
     },
     {
       name: 'ui',
@@ -53,7 +52,7 @@ module.exports = {
         { name: 'Tailwind CSS', value: 'tailwind' },
         { name: 'Vuetify.js', value: 'vuetify' }
       ],
-      default: 'none'
+      default: 'tailwind'
     },
     {
       name: 'server',
@@ -81,7 +80,7 @@ module.exports = {
         { name: 'Axios', value: 'axios' },
         { name: 'Progressive Web App (PWA) Support', value: 'pwa' }
       ],
-      default: []
+      default: ['axios', 'pwa']
     },
     {
       name: 'linter',
@@ -93,7 +92,7 @@ module.exports = {
         { name: 'Prettier', value: 'prettier' },
         { name: 'Lint staged files', value: 'lintStaged' }
       ],
-      default: []
+      default: ['eslint', 'prettier', 'lintStaged']
     },
     {
       name: 'test',
@@ -123,7 +122,7 @@ module.exports = {
       choices: [
         { name: 'jsconfig.json (Recommended for VS Code)', value: 'jsconfig.json' }
       ],
-      default: []
+      default: ['jsconfig.json']
     }
   ],
   templateData () {
