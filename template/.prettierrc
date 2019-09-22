@@ -3,5 +3,7 @@
   <%_ if (eslint) { _%>
   "arrowParens": "always",
   <%_ } _%>
-  "singleQuote": true
+  "singleQuote": true,
+  "trailingComma": "all",
+  "endOfLine":"auto"
 }

@@ -4,11 +4,11 @@ module.exports = {
     browser: true,
     node: true
   },
-  <%_ if (server === 'adonis') { _%>
   globals: {
+    <%_ if (server === 'adonis') { _%>
     use: true
+    <%_ } _%>
   },
-  <%_ } _%>
   parserOptions: {
     parser: 'babel-eslint'
   },
@@ -28,6 +28,7 @@ module.exports = {
   <%_ } _%>
   // add your custom rules here
   rules: {
+    'vue/no-v-html': 'off',
     <%_ if (!esm){ _%>
     'nuxt/no-cjs-in-config': 'off'
     <%_ } _%>
