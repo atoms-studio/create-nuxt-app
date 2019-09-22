@@ -63,6 +63,8 @@ module.exports = {
     'tachyons/css/tachyons.css'
     <%_ } else if (ui === 'framevuerk') { _%>
     'framevuerk/dist/framevuerk-nuxt.min.css'
+    <%_ } else if (ui === 'none') { _%>
+    '~/assets/scss/app.scss'
     <%_ } _%>
   ],
   /*
@@ -145,6 +147,14 @@ module.exports = {
         }
       }
     }
+  },
+  <%_ } else if (ui == 'tailwind') { _%>
+  /*
+  ** Tailwind CSS module configuration
+  ** https://github.com/nuxt-community/nuxt-tailwindcss
+  */
+  tailwindcss: {
+    cssPath: '~/assets/scss/app.scss',
   },
   <%_ } _%>
   /*
