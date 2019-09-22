@@ -112,6 +112,8 @@
     "": ""
   },
   "devDependencies": {
+    "node-sass": "^4.9.4",
+    "sass-loader": "^8.0.0",
     <%_ if (server !== 'none') { _%>
     "nodemon": "^1.18.9",
     <%_ } _%>
@@ -154,6 +156,5 @@
     "require-extension-hooks-vue": "^2.0.0",
     <%_ } _%>
     "": ""
-
   }
 }
