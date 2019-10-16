@@ -130,7 +130,8 @@ module.exports = {
       type: 'list',
       choices: [
         { name: 'None', value: 'none' },
-        { name: 'DatoCMS', value: 'datocms' }
+        { name: 'DatoCMS', value: 'datocms' },
+        { name: 'Contentful', value: 'contentful' }
       ],
       default: 'none'
     }
@@ -218,6 +219,13 @@ module.exports = {
 
     if (this.answers.hlcms !== 'none') {
       if (this.answers.hlcms === 'datocms') {
+        actions.push({
+          type: 'add',
+          files: '**',
+          templateDir: `template/hlcms/${this.answers.hlcms}`
+        })
+      }
+      if (this.answers.hlcms === 'contentful') {
         actions.push({
           type: 'add',
           files: '**',

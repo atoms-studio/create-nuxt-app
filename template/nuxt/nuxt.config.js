@@ -24,7 +24,13 @@ module.exports = {
   <%_ if (hlcms === 'datocms') { _%>
     env: {
       DATOCMS_API_TOKEN: process.env.DATOCMS_API_TOKEN
-    }
+    },
+  <%_ } _%>
+  <%_ if (hlcms === 'contentful') { _%>
+    env: {
+      CTF_SPACE_ID: process.env.CTF_SPACE_ID,
+      CTF_CDA_ACCESS_TOKEN: process.env.CTF_CDA_ACCESS_TOKEN
+    },
   <%_ } _%>
   /*
   ** Headers of the page

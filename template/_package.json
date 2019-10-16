@@ -116,6 +116,10 @@
     "graphql-tag": "^2.10.1",
     "isomorphic-fetch": "^2.2.1",
     <%_ } _%>
+    <%_ if (hlcms === 'contentful') { _%>
+    "contentful": "^7.8.2",
+    "@contentful/rich-text-html-renderer": "^13.4.0",
+    <%_ } _%>
     "": ""
   },
   "devDependencies": {
