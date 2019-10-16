@@ -123,6 +123,16 @@ module.exports = {
         { name: 'jsconfig.json (Recommended for VS Code)', value: 'jsconfig.json' }
       ],
       default: ['jsconfig.json']
+    },
+    {
+      name: 'hlcms',
+      message: 'Choose your Headless CMS',
+      type: 'list',
+      choices: [
+        { name: 'None', value: 'none' },
+        { name: 'DatoCMS', value: 'datocms' }
+      ],
+      default: 'none'
     }
   ],
   templateData () {
@@ -204,6 +214,16 @@ module.exports = {
         files: '**',
         templateDir: `template/frameworks/${this.answers.server}`
       })
+    }
+
+    if (this.answers.hlcms !== 'none') {
+      if (this.answers.hlcms === 'datocms') {
+        actions.push({
+          type: 'add',
+          files: '**',
+          templateDir: `template/hlcms/${this.answers.hlcms}`
+        })
+      }
     }
 
     actions.push({

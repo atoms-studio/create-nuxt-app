@@ -109,6 +109,13 @@
     <%_ if (ui === 'tachyons') { _%>
     "tachyons": "^4.11.1",
     <%_ } _%>
+    <%_ if (hlcms === 'datocms') { _%>
+    "apollo-boost": "^0.4.4",
+    "apollo-cache-inmemory": "^1.6.2",
+    "graphql": "^14.4.2",
+    "graphql-tag": "^2.10.1",
+    "isomorphic-fetch": "^2.2.1",
+    <%_ } _%>
     "": ""
   },
   "devDependencies": {

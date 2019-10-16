@@ -21,6 +21,11 @@ module.exports = {
   dev: process.env.NODE_ENV === 'development',
   srcDir: resolve(__dirname, '..', 'resources'),
   <%_ } _%>
+  <%_ if (hlcms === 'datocms') { _%>
+    env: {
+      DATOCMS_API_TOKEN: process.env.DATOCMS_API_TOKEN
+    }
+  <%_ } _%>
   /*
   ** Headers of the page
   */
