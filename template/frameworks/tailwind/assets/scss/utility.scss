@@ -1,0 +1,31 @@
+// Add your custom utilities
+a {
+  &:hover {
+    @apply underline;
+  }
+}
+
+input {
+  @apply border border-black mb-2 p-2 w-full;
+
+  &:focus {
+    outline: none;
+  }
+
+  &[type="checkbox"] {
+    @apply w-auto inline-block;
+  }
+}
+
+button,
+.btn {
+  @apply rounded-sm py-2 px-6 border border-black;
+
+  &:focus {
+    @apply outline-none;
+  }
+
+  &:hover {
+    @apply underline;
+  }
+}
