@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.3.0-2.11.1](https://github.com/atoms-studio/create-nuxt-app/compare/v1.3.0-2.11.1...v2.11.1) (2019-11-21)
+
+### Features
+
+* add headless CMS sections ([87149c5](https://github.com/atoms-studio/create-nuxt-app/commit/87149c5))
+* merge create-nuxt-app v2.11.1
+
 ### [1.0.0-2.10.1](https://github.com/atoms-studio/create-nuxt-app/compare/v1.0.0-2.10.1...v2.10.1) (2019-09-23)
 
 ### Features

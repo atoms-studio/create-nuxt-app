@@ -28,6 +28,7 @@ cli
   .option('-e, --edge', 'To install `nuxt-edge` instead of `nuxt`')
   .option('-i, --info', 'Print out debugging information relating to the local environment')
   .option('-y, --yes', 'Use default options')
+  .option('--answers <json>', 'Skip all the prompts and use the provided answers')
   .option('--verbose', 'Show debug logs')
   .action((outDir = '.', cliOptions) => {
     if (cliOptions.info) {
@@ -37,10 +38,10 @@ cli
     console.log(chalk`{cyan create-nuxt-app v${version}}`)
     console.log(chalk`✨  Generating Nuxt.js project in {cyan ${outDir}}`)
 
-    const { verbose, yes } = cliOptions
+    const { verbose, answers } = cliOptions
     const logLevel = verbose ? 4 : 2
     // See https://saojs.org/api.html#standalone-cli
-    sao({ generator, outDir, logLevel, cliOptions, yes })
+    sao({ generator, outDir, logLevel, answers, cliOptions })
       .run()
       .catch((err) => {
         console.trace(err)
