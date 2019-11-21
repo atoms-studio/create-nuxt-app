@@ -11,6 +11,10 @@ const colors = require('vuetify/es5/util/colors').default
   <%_ } _%>
 <%_ } _%>
 
+<%_ if (dotenv) { _%>
+  require('dotenv').config()
+<%_ } _%>
+
 <%_ if (esm) { _%>
 export default {
 <%_ } else { _%>
@@ -195,6 +199,13 @@ module.exports = {
     ** You can extend webpack config here
     */
     extend (config, ctx) {
+      <%_ if (hlcms === 'datocms') { _%>
+        config.module.rules.push({
+          test: /\.(graphql|gql)$/,
+          exclude: /node_modules/,
+          loader: 'graphql-tag/loader',
+        })
+      <%_ } _%>  
     }
   }
 }

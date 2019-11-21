@@ -5,20 +5,38 @@
   "author": "<%= author %>",
   "private": true,
   "scripts": {
+    <%_ if (hlcms === 'datocms') { _%>
+    "predev": "node scripts/fragment.js",
+    <%_ } _%>
     <%_ if (server === 'none') { _%>
     "dev": "nuxt",
+        <%_ if (hlcms === 'datocms') { _%>
+          "prebuild": "node scripts/fragment.js",
+        <%_ } _%>
     "build": "nuxt build",
     "start": "nuxt start",
+        <%_ if (hlcms === 'datocms') { _%>
+          "pregenerate": "node scripts/fragment.js",
+        <%_ } _%>
     "generate": "nuxt generate",
     <%_ } else if (server === 'adonis') { _%>
     "serve:dev": "<%= pmRun %> dev",
     "dev": "nodemon --watch app --watch bootstrap --watch config --watch .env -x node server.js",
+        <%_ if (hlcms === 'datocms') { _%>
+          "prebuild": "node scripts/fragment.js",
+        <%_ } _%>
     "build": "cross-env NODE_ENV=production node ./ace nuxtbuild",
     "start": "cross-env NODE_ENV=production node server.js",
     <%_ } else { _%>
     "dev": "cross-env NODE_ENV=development nodemon server/index.js --watch server",
+        <%_ if (hlcms === 'datocms') { _%>
+          "prebuild": "node scripts/fragment.js",
+        <%_ } _%>
     "build": "nuxt build",
     "start": "cross-env NODE_ENV=production node server/index.js",
+        <%_ if (hlcms === 'datocms') { _%>
+          "pregenerate": "node scripts/fragment.js",
+        <%_ } _%>
     "generate": "nuxt generate",
     <%_ } _%>
     <%_ if (ui === 'framevuerk') { _%>
