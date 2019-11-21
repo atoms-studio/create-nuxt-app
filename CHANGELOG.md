@@ -8,6 +8,7 @@ All notable changes to this project will be documented in this file. See [standa
 
 * add headless CMS sections ([87149c5](https://github.com/atoms-studio/create-nuxt-app/commit/87149c5))
 * merge create-nuxt-app v2.11.1
+* add apollo fragments to datoCMS headless option ([008e8b1](https://github.com/atoms-studio/create-nuxt-app/commit/008e8b1))
 
 ### [1.0.0-2.10.1](https://github.com/atoms-studio/create-nuxt-app/compare/v1.0.0-2.10.1...v2.10.1) (2019-09-23)
 

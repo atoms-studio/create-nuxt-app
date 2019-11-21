@@ -34,10 +34,11 @@ yarn create @atoms-studio/nuxt-app <my-project>
 ✅Sass support out of the box<br>
 ✅Update prompts default values<br>
 ✅--yes flag<br>
+✅@nuxtjs/dotenv module<br>
+✅headless CMS options (Contentful, DatoCMS)<br>
 ⬜️ ~/store/index.js<br>
 ⬜️ ~/layouts/error.vue<br>
 ⬜️ nuxt-i18n module<br>
-⬜️ @nuxtjs/dotenv module<br>
 ⬜️ nuxt-svg-loader<br>
 ⬜️ ~/plugins/global-components.js<br>
 ⬜️ netlify integration (netlify.toml, functions folder)<br>
