@@ -53,6 +53,9 @@
     <%_ } else if (test !== 'none') { _%>
     "test": "<%= test %>",
     <%_ } _%>
+    <%_ if (standardversion) { _%>
+    "release": "standard-version --no-verify -t ''",
+    <%_ } _%>
     "": ""
   },
   <%_ if (lintStaged) { _%>
@@ -64,9 +67,24 @@
     "*.{css,vue}": "stylelint"
     <%_ } _%>
   },
+  <%_ } _%>
+  <%_ if (lintStaged || standardversion) { _%>
   "husky": {
     "hooks": {
-      "pre-commit": "lint-staged"
+      <%_ if (lintStaged) { _%>
+      "pre-commit": "lint-staged",
+      <%_ } _%>
+      <%_ if (standardversion) { _%>
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
+      <%_ } _%>
+      "": ""
+    }
+  },
+  <%_ } _%>
+  <%_ if (standardversion) { _%>
+  "standard-version": {
+    "skip": {
+      "tag": true
     }
   },
   <%_ } _%>
@@ -178,8 +196,10 @@
     "eslint-plugin-prettier": "^3.1.2",
     "prettier": "^1.19.1",
     <%_ } _%>
-    <%_ if (lintStaged) { _%>
+    <%_ if (lintStaged || standardversion) { _%>
     "husky": "^4.0.0",
+    <%_ } _%>
+    <%_ if (lintStaged) { _%>
     "lint-staged": "^10.0.0",
     <%_ } _%>
     <%_ if (stylelint) { _%>
@@ -201,6 +221,11 @@
     "require-extension-hooks": "^0.3.3",
     "require-extension-hooks-babel": "^1.0.0",
     "require-extension-hooks-vue": "^2.0.0",
+    <%_ } _%>
+    <%_ if (standardversion) { _%>
+    "@commitlint/cli": "^8.3.0",
+    "@commitlint/config-conventional": "^8.3.0",
+    "standard-version": "^7.1.0",
     <%_ } _%>
     "": ""
   }

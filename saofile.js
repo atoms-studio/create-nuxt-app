@@ -19,6 +19,7 @@ module.exports = {
     const esm = this.answers.server === 'none'
     const pm = this.answers.pm === 'yarn' ? 'yarn' : 'npm'
     const pmRun = this.answers.pm === 'yarn' ? 'yarn' : 'npm run'
+    const standardversion = this.answers.devTools.includes('standardversion')
 
     const { cliOptions = {} } = this.sao.opts
     const edge = cliOptions.edge ? '-edge' : ''
@@ -35,7 +36,8 @@ module.exports = {
       pm,
       pmRun,
       dotenv,
-      i18n
+      i18n,
+      standardversion
     }
   },
   actions () {
@@ -130,7 +132,8 @@ module.exports = {
         '_jsconfig.json': 'devTools.includes("jsconfig.json")',
         'semantic.yml': 'devTools.includes("semantic-pull-requests")',
         '.env': 'features.includes("dotenv")',
-        '_stylelint.config.js': 'linter.includes("stylelint")'
+        '_stylelint.config.js': 'linter.includes("stylelint")',
+        '_commitlint.config.js': 'devTools.includes("standardversion")'
       }
     })
 
@@ -143,7 +146,8 @@ module.exports = {
         '_.eslintrc.js': '.eslintrc.js',
         '_jsconfig.json': 'jsconfig.json',
         '_stylelint.config.js': 'stylelint.config.js',
-        'semantic.yml': '.github/semantic.yml'
+        'semantic.yml': '.github/semantic.yml',
+        '_commitlint.config.js': 'commitlint.config.js'
       }
     })
 
