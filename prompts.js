@@ -25,7 +25,7 @@ module.exports = [
       { name: 'Npm', value: 'npm' }
     ],
     type: 'list',
-    default: 'npm'
+    default: 'yarn'
   },
   {
     name: 'ui',
