@@ -73,9 +73,10 @@ module.exports = [
     choices: [
       { name: 'Axios', value: 'axios' },
       { name: 'Progressive Web App (PWA) Support', value: 'pwa' },
-      { name: 'DotEnv', value: 'dotenv' }
+      { name: 'DotEnv', value: 'dotenv' },
+      { name: 'Nuxt i18n', value: 'i18n' }
     ],
-    default: ['axios', 'pwa', 'dotenv']
+    default: ['axios', 'pwa', 'dotenv', 'i18n']
   },
   {
     name: 'linter',

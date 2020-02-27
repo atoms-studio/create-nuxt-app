@@ -2,12 +2,18 @@
   <%_ if (ui === 'vuetify') { _%>
 import colors from 'vuetify/es5/util/colors'
   <%_ } _%>
+  <%_ if (i18n) { _%>
+  import i18n from './lang/config'
+  <%_ } _%>
 <%_ } else { _%>
   <%_ if (server === 'adonis') { _%>
 const { resolve } = require('path')
   <%_ } _%>
   <%_ if (ui === 'vuetify') { _%>
 const colors = require('vuetify/es5/util/colors').default
+  <%_ } _%>
+  <%_ if (i18n) { _%>
+const i18n = require('./lang/config')
   <%_ } _%>
 <%_ } _%>
 
@@ -144,6 +150,10 @@ module.exports = {
     // Doc: https://github.com/nuxt-community/dotenv-module
     '@nuxtjs/dotenv',
     <%_ } _%>
+    <%_ if (i18n) { _%>
+    // Doc: https://nuxt-community.github.io/nuxt-i18n/
+    'nuxt-i18n',
+    <%_ } _%>
   ],
   <%_ if (axios) { _%>
   /*
@@ -152,6 +162,13 @@ module.exports = {
   */
   axios: {
   },
+  <%_ } _%>
+  <%_ if (i18n) { _%>
+    /*
+    ** Nuxt i18n module configuration
+    ** See https://nuxt-community.github.io/nuxt-i18n/options-reference.html
+    */
+   i18n,
   <%_ } _%>
   <%_ if (ui === 'vuetify') { _%>
   /*
