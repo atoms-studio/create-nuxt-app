@@ -80,6 +80,8 @@ module.exports = {
     'framevuerk/dist/framevuerk-nuxt.min.css'
     <%_ } else if (ui === 'none') { _%>
     '~/assets/scss/app.scss'
+    <%_ } else if (ui === 'vuesax') { _%>
+    'vuesax/dist/vuesax.css'
     <%_ } _%>
   ],
   /*
@@ -94,6 +96,8 @@ module.exports = {
     '@/plugins/antd-ui'
     <%_ } else if (ui === 'framevuerk') { _%>
     '@/plugins/framevuerk'
+    <%_ } else if (ui === 'vuesax') { _%>
+    '@/plugins/vuesax'
     <%_ } _%>
   ],
   /*

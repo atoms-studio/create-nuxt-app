@@ -16,6 +16,7 @@ module.exports = {
     const axios = this.answers.features.includes('axios')
     const dotenv = this.answers.features.includes('dotenv')
     const esm = this.answers.server === 'none'
+    const pm = this.answers.pm === 'yarn' ? 'yarn' : 'npm'
     const pmRun = this.answers.pm === 'yarn' ? 'yarn' : 'npm run'
 
     const { cliOptions = {} } = this.sao.opts
@@ -30,6 +31,7 @@ module.exports = {
       axios,
       esm,
       edge,
+      pm,
       pmRun,
       dotenv
     }
@@ -74,7 +76,7 @@ module.exports = {
         const files = {}
         for (const action of actions) {
           const options = { cwd: join(rootDir, action.templateDir), dot: true }
-          for (const file of glob.sync(`*`, options)) {
+          for (const file of glob.sync('*', options)) {
             files[file] = `resources/${file}`
           }
         }
@@ -114,8 +116,9 @@ module.exports = {
       files: '*',
       filters: {
         '_.eslintrc.js': 'linter.includes("eslint")',
-        '.prettierrc': 'linter.includes("prettier")',
-        'jsconfig.json': 'devTools.includes("jsconfig.json")',
+        '_.prettierrc': 'linter.includes("prettier")',
+        '_jsconfig.json': 'devTools.includes("jsconfig.json")',
+        'semantic.yml': 'devTools.includes("semantic-pull-requests")',
         '.env': 'features.includes("dotenv")',
         '_stylelint.config.js': 'linter.includes("stylelint")'
       }
@@ -126,8 +129,11 @@ module.exports = {
       patterns: {
         gitignore: '.gitignore',
         '_package.json': 'package.json',
+        '_.prettierrc': '.prettierrc',
         '_.eslintrc.js': '.eslintrc.js',
-        '_stylelint.config.js': 'stylelint.config.js'
+        '_jsconfig.json': 'jsconfig.json',
+        '_stylelint.config.js': 'stylelint.config.js',
+        'semantic.yml': '.github/semantic.yml'
       }
     })
 
