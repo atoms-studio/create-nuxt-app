@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.4.0-2.14.0](https://github.com/atoms-studio/create-nuxt-app/compare/v2.14.0...v1.4.0-2.14.0) (2020-02-27)
+
+
+### Bug Fixes
+
+* **ava:** no tests found in test/ava.setup.js ([#426](https://github.com/atoms-studio/create-nuxt-app/issues/426)) ([c1afad4](https://github.com/atoms-studio/create-nuxt-app/commit/c1afad42ddf0206af303df64e0a8a7bd9c67e108))
+
+## [1.0.0-2.10.1](https://github.com/atoms-studio/create-nuxt-app/compare/v2.10.1...v1.0.0-2.10.1) (2019-09-23)
+
 ### [1.3.0-2.11.1](https://github.com/atoms-studio/create-nuxt-app/compare/v1.3.0-2.11.1...v2.11.1) (2019-11-21)
 
 ### Features
